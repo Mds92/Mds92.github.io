@@ -1,11 +1,37 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{title}}
-  </h1>
+<h1>
+  {{title}}
+</h1>
+<hr />
+<h3>In Line</h3>
+<div class="row">
+  <div class="col-sm-4">
+    <mds-datetime-picker (dateChanged)="mdsDatePicker1OnDateChange($event)">
+    </mds-datetime-picker>
+    <hr />
+    <div class="text-center custom-font">{{selectedDate1}}</div>
+  </div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <mds-datetime-picker (dateChanged)="mdsDatePicker2OnDateChange($event)" [isPersian]="false">
+    </mds-datetime-picker>
+    <hr />
+    <div class="text-center custom-font">{{selectedDate2}}</div>
+  </div>
 </div>
-
-<div>
-  <mds-datetime-picker>
-  </mds-datetime-picker>
+<hr />
+<div class="row">
+  <div class="col-sm-3">
+    <mds-datetime-picker [inLine]="false" initialValue="1396/06/05   10:20:00">
+    </mds-datetime-picker>
+  </div>
+  <div class="col-sm-4">
+    <mds-datetime-picker [inLine]="false" [rangeSelector]="true">
+    </mds-datetime-picker>
+  </div>
+  <div class="col-sm-4">
+    <mds-datetime-picker [inLine]="false" [isPersian]="false" [rangeSelector]="true">
+    </mds-datetime-picker>
+  </div>
 </div>
+<hr />
+<div class="text-muted">By Mohammad Dayyan, @mdssoft</div>

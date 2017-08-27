@@ -1,5 +1,8 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+mds-datetime-picker input,
+mds-datetime-picker td,
+mds-datetime-picker th,
 mds-datetime-picker .mat-grid-tile .mat-figure,
 mds-datetime-picker .mat-input-element,
 mds-datetime-picker .mat-button, 

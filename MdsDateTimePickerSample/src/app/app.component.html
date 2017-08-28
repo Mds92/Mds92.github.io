@@ -5,31 +5,32 @@
 <h3>In Line</h3>
 <div class="row">
   <div class="col-sm-4">
-    <mds-datetime-picker (dateChanged)="mdsDatePicker1OnDateChange($event)" [enableAnimation]="false" [templateType]="2">
+    <mds-datetime-picker (dateChanged)="mdsDatePicker1OnDateChange($event)" [templateType]="2">
     </mds-datetime-picker>
     <hr />
     <div class="text-center custom-font">{{selectedDate1}}</div>
   </div>
   <div class="col-sm-4"></div>
   <div class="col-sm-4">
-    <mds-datetime-picker (dateChanged)="mdsDatePicker2OnDateChange($event)" [isPersian]="false" [enableAnimation]="false" [templateType]="1" [rangeSelector]="true">
+    <mds-datetime-picker (dateChanged)="mdsDatePicker2OnDateChange($event)" (rangeDateChanged)="mdsDatePicker1OnDateRangeChange($event)"
+      [isPersian]="false" [templateType]="1" [rangeSelector]="true">
     </mds-datetime-picker>
     <hr />
-    <div class="text-center custom-font">{{selectedDate2}}</div>
+    <div class="text-center custom-font">{{selectedDateRange1}}</div>
   </div>
 </div>
 <hr />
 <div class="row">
+  <div class="col-sm-4">
+    <mds-datetime-picker [inLine]="false" initialValue="1396/06/05   10:20:00" [templateType]="1">
+    </mds-datetime-picker>
+  </div>
   <div class="col-sm-3">
-    <mds-datetime-picker [inLine]="false" initialValue="1396/06/05   10:20:00" [enableAnimation]="false" [templateType]="1">
+    <mds-datetime-picker [inLine]="false" [rangeSelector]="true" [templateType]="1" [textBoxType]="2">
     </mds-datetime-picker>
   </div>
-  <div class="col-sm-4">
-    <mds-datetime-picker [inLine]="false" [rangeSelector]="true" [enableAnimation]="false" [templateType]="1">
-    </mds-datetime-picker>
-  </div>
-  <div class="col-sm-4">
-    <mds-datetime-picker [inLine]="false" [isPersian]="false" [rangeSelector]="true" [enableAnimation]="false" [templateType]="2">
+  <div class="col-sm-3">
+    <mds-datetime-picker [inLine]="false" [isPersian]="false" [rangeSelector]="true" [templateType]="2">
     </mds-datetime-picker>
   </div>
 </div>

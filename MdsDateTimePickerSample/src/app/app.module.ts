@@ -8,7 +8,7 @@ import { MdsDatetimePickerModule } from 'mds.angular.datetimepicker';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, MdsDatetimePickerModule],
-  providers: [], 
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

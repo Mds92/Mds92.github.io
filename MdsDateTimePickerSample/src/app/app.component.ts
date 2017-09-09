@@ -13,13 +13,19 @@ export class AppComponent {
   selectedDateRange1 = ''
 
   mdsDatePicker1OnDateChange(date: IDate): void {
-    this.selectedDate1 = date.formatString;
+    this.selectedDate1 = date == null
+      ? ''
+      : date.formatString;
   }
   mdsDatePicker2OnDateChange(date: IDate): void {
-    this.selectedDate2 = date.formatString;
+    this.selectedDate2 = date == null
+      ? ''
+      : date.formatString;
   }
 
   mdsDatePicker1OnDateRangeChange(date: IRangeDate): void {
-    this.selectedDateRange1 = date.startDate.formatString + ' - ' + date.endDate.formatString;
+    this.selectedDateRange1 = date == null
+      ? ''
+      : date.startDate.formatString + ' - ' + date.endDate.formatString;
   }
 }

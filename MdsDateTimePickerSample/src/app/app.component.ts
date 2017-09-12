@@ -10,18 +10,18 @@ export class AppComponent {
 
   @ViewChild('mdsDateTimePicker') mdsDateTimePicker: MdsDatetimePickerComponent;
 
-  private inLine = false;
-  private isPersian = false;
-  private timePicker = false;
-  private rangeSelector = false;
-  private persianChar = false;
-  private templateType = 2;
-  private textBoxType = 1;
-  private format = '';
-  private placeHolder = '';
-  private buttonIcon = '<span class="fa fa-calendar" aria-hidden="true"></span>';
+  inLine = false;
+  isPersian = false;
+  timePicker = false;
+  rangeSelector = false;
+  persianChar = false;
+  templateType = 2;
+  textBoxType = 1;
+  format = '';
+  placeHolder = '';
+  buttonIcon = '<span class="fa fa-calendar" aria-hidden="true"></span>';
 
-  private settingChange(): void {
+  settingChange(): void {
     this.mdsDateTimePicker.clear();
     this.mdsDateTimePicker.templateType = this.templateType;
     this.mdsDateTimePicker.inLine = this.inLine;

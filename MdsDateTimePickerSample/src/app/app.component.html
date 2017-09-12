@@ -2,42 +2,153 @@
   Angular Persian Date Time Picker
 </h1>
 <hr />
-<h3>In Line</h3>
-<div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-3">
-    <mds-datetime-picker (dateChanged)="mdsDatePicker1OnDateChange($event)" [templateType]="2">
-    </mds-datetime-picker>
-    <hr />
-    <div class="text-center custom-font">{{selectedDate1}}</div>
-  </div>
-  <div class="col-sm-3">
-    <mds-datetime-picker (dateChanged)="mdsDatePicker2OnDateChange($event)" 
-      (rangeDateChanged)="mdsDatePicker1OnDateRangeChange($event)"
-      [isPersian]="false" [templateType]="1" [rangeSelector]="true">
-    </mds-datetime-picker>
-    <hr />
-    <div class="text-center custom-font">{{selectedDateRange1}}</div>
-  </div>
-  <div class="col-sm-1"></div>
-</div>
-<hr />
-<div class="row">
-  <div class="col">
-    <mds-datetime-picker [inLine]="false" initialValue="1396/06/05   10:20:00" [templateType]="1">
+<div class="row justify-content-center" style="min-height: 500px;">
+  <div class="col-sm-4">
+    <mds-datetime-picker [inLine]="false" [isPersian]="false" [rangeSelector]="false" [templateType]="2" [timePicker]="false"
+      #mdsDateTimePicker buttonIcon="<span class='fa fa-calendar' aria-hidden='true'></span>">
     </mds-datetime-picker>
   </div>
-  <div class="col">
-    <mds-datetime-picker [inLine]="false" [rangeSelector]="true" [templateType]="1" [textBoxType]="2">
-    </mds-datetime-picker>
-  </div>
-  <div class="col">
-    <mds-datetime-picker [inLine]="false" [rangeSelector]="true" [templateType]="1" [textBoxType]="2">
-    </mds-datetime-picker>
-  </div>
-  <div class="col">
-    <mds-datetime-picker [inLine]="false" [isPersian]="false" [rangeSelector]="true" [templateType]="2" buttonIcon="<span class='fa fa-calendar' aria-hidden='true'></span>">
-    </mds-datetime-picker>
+  <div class="col-sm-6">
+    <div class="card">
+      <h4 class="card-header">Settings</h4>
+      <div class="card-body">
+
+        <table class="table table-sm table-responsive table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Property Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>templateType</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="templateTypeRadio2" name="templateTypeRadio" type="radio" class="custom-control-input" [(ngModel)]="templateType" (change)="settingChange()" [value]="1">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Bootstrap4 - 1</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="templateTypeRadio1" name="templateTypeRadio" type="radio" class="custom-control-input" checked [(ngModel)]="templateType" (change)="settingChange()" [value]="2">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">AngularMaterial - 2</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>textBoxType</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="textBoxTypeRadio2" name="textBoxTypeRadio" type="radio" class="custom-control-input" [(ngModel)]="textBoxType" (change)="settingChange()" [value]="1">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">withButton - 1</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="textBoxTypeRadio1" name="textBoxTypeRadio" type="radio" class="custom-control-input" checked [(ngModel)]="textBoxType" (change)="settingChange()" [value]="2">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">withoutButton - 2</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>inLine</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="inLineRadio1" name="inLineRadio" type="radio" class="custom-control-input" checked [(ngModel)]="inLine" (change)="settingChange()" [value]="true">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">True</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="inLineRadio2" name="inLineRadio" type="radio" class="custom-control-input" [(ngModel)]="inLine" (change)="settingChange()" [value]="false">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">False</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>isPersian</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="isPersianRadio1" name="isPersianRadio" type="radio" class="custom-control-input" checked [(ngModel)]="isPersian" (change)="settingChange()" [value]="true">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">True</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="isPersianRadio2" name="isPersianRadio" type="radio" class="custom-control-input" [(ngModel)]="isPersian" (change)="settingChange()" [value]="false">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">False</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>persianChar</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="persianCharRadio1" name="persianCharRadio" type="radio" class="custom-control-input" checked [(ngModel)]="persianChar" (change)="settingChange()" [value]="true">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">True</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="persianCharRadio2" name="persianCharRadio" type="radio" class="custom-control-input" [(ngModel)]="persianChar" (change)="settingChange()" [value]="false">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">False</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>timePicker</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="timePickerRadio1" name="timePickerRadio" type="radio" class="custom-control-input" checked [(ngModel)]="timePicker" (change)="settingChange()" [value]="true">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">True</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="timePickerRadio2" name="timePickerRadio" type="radio" class="custom-control-input" [(ngModel)]="timePicker" (change)="settingChange()" [value]="false">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">False</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>rangeSelector</td>
+              <td>
+                <label class="custom-control custom-radio">
+                  <input id="rangeSelectorRadio1" name="rangeSelectorRadio" type="radio" class="custom-control-input" checked [(ngModel)]="rangeSelector" (change)="settingChange()" [value]="true">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">True</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="rangeSelectorRadio2" name="rangeSelectorRadio" type="radio" class="custom-control-input" [(ngModel)]="rangeSelector" (change)="settingChange()" [value]="false">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">False</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>format</td>
+              <td>
+                <input class="form-control form-control-sm" type="text" [(ngModel)]="format" (change)="settingChange()">
+              </td>
+            </tr>
+            <tr>
+              <td>placeHolder</td>
+              <td>
+                <input class="form-control form-control-sm" type="text" [(ngModel)]="placeHolder" (change)="settingChange()">
+              </td>
+            </tr>
+            <tr>
+              <td>buttonIcon</td>
+              <td>
+                <input class="form-control form-control-sm" type="text" [(ngModel)]="buttonIcon" (change)="settingChange()">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
   </div>
 </div>
 <hr />

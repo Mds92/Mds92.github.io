@@ -34,11 +34,4 @@ export class AppComponent {
     this.mdsDateTimePicker.placeHolder = this.placeHolder;
     this.mdsDateTimePicker.buttonIcon = this.buttonIcon;
   }
-
-  mdsDatePicker1OnDateChange(date: IDate): void {
-  }
-  mdsDatePicker2OnDateChange(date: IDate): void {
-  }
-  mdsDatePicker1OnDateRangeChange(date: IRangeDate): void {
-  }
 }

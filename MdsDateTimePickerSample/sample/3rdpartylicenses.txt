@@ -107,7 +107,7 @@ MIT
 MIT
 MIT
 
-mds.angular.datetimepicker@1.4.5
+mds.angular.datetimepicker@1.4.15
 MIT
 MIT
 
